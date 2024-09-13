@@ -25,6 +25,22 @@ function addTask($inputTasks){
     echo"to be implemented"
 }
 
+
+$file = 'remind.txt';
+
+
+function readReminders($file) {
+    if (file_exists($file)) {
+        return file($file, FILE_IGNORE_NEW_LINES);
+    }
+    return [];
+}
+
+
+function writeReminder($file, $reminder) {
+    file_put_contents($file, $reminder . \n, FILE_APPEND);
+}
+
 do{
     echo "To do ;ist \n";
     echo "Ievadiet jau => 1\n";
